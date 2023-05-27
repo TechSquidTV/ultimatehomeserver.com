@@ -1,0 +1,94 @@
+---
+sidebar_position: 3
+---
+
+# Configure Services
+
+UHS offers a large suite of services which are disabled by default. Via a _helm_ `values.yaml` file, you can enable and customize the services you want to use.
+
+_See the [Services](../services) section for more information on each service._
+
+## UHS CLI
+
+The `uhs` CLI can help you generate configuration files for UltimateHomeServer.
+
+### Install
+
+#### Binary
+
+Utilize the install script to download the latest release for your platform.
+
+```bash
+wget https://raw.githubusercontent.com/TechSquidTV/uhs-cli/main/install.sh
+```
+
+```bash
+chmod +x install.sh
+```
+
+```bash
+./install.sh
+```
+
+#### Go
+
+Alternatively, if your system has Go installed, you can install the CLI via the following command.
+
+```bash
+go install github.com/uhs-cli/uhs@latest
+```
+
+### Usage
+
+[![asciicast](https://asciinema.org/a/T0Cz23OthKROiZi0FV2v5wfe2.svg)](https://asciinema.org/a/T0Cz23OthKROiZi0FV2v5wfe2)
+
+UltimateHomeServer is distributed as helm charts which can be customized via a `values.yaml` file. The `uhs` CLI can help you generate this file.
+
+#### Generate Default Config
+
+First generate the `default` configuration file. This file will serve as a template for all of the available services. We will next override this file with our own customizations.
+
+```bash
+uhs default -o values.yaml
+```
+
+#### Customize Services
+
+To enable and customize the desired services, begin the configuration wizard by running the following command.
+
+```bash
+uhs configure -o secrets.yaml
+```
+
+This command will begin by prompting you to select the services you wish to enable. If you wish, you can also pass services as arguments to the command.
+
+```bash
+uhs configure nginx plex radarr sonarr -o secrets.yaml
+```
+
+These files will be placed in the same directory as the UltimateHomeServer repository at the root level, next to the `Chart.yaml` file.
+
+## Prep the system
+
+Once you have created your configuration files you will have multiple services similar to:
+
+```yaml
+    kavita:
+        enabled: false
+        replicaCount: 1
+        image:
+            repository: kizaing/kavita
+            tag: latest
+            pullPolicy: Always
+        ports:
+            http: 5000
+        config: /opt/kavita/config
+        library: /opt/kavita/library
+```
+
+Notice here we reference two paths `config` and `library`. These paths need to be created on the host system if they do no already exist and should be writable.
+
+```bash
+mkdir -p /opt/kavita/config /opt/kavita/library
+chmod -R 666 /opt/kavita/config /opt/kavita/library
+```
