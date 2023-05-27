@@ -7,8 +7,8 @@
   <a href="https://github.com/sponsors/KyleTryon">
     <img alt="GitHub Sponsors" src="https://img.shields.io/github/sponsors/KyleTryon">
   </a>
-  <a href="https://github.com/TechSquidTV/ultimatehomeserver.com/actions/workflows/golangci-lint.yml">
-  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/TechSquidTV/ultimatehomeserver.com/golangci-lint.yml">
+  <a href="https://github.com/TechSquidTV/ultimatehomeserver.com/actions/workflows/deploy.yml">
+  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/TechSquidTV/ultimatehomeserver.com/deploy.yml">
   </a>
   <a href="https://discord.gg/CTC9DVvYZz">
     <img alt="Discord" src="https://img.shields.io/discord/415249366840901643?style=plastic&logo=discord">
