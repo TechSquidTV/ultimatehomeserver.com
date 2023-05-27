@@ -62,12 +62,13 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
+      image: "img/uhs-media-card.png",
       navbar: {
         title: "UltimateHomeServer",
         logo: {
           alt: "UltimateHomeServer Logo",
           src: "img/logo.svg",
+          srcDark: "img/logo-dark.svg",
         },
         items: [
           {
