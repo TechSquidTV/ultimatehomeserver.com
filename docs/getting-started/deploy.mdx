@@ -1,0 +1,44 @@
+---
+sidebar_position: 4
+next: /docs/troubleshooting
+---
+
+# Deployment
+
+When you have have configured your services and SSL certificates, you can deploy your server and begin accessing your services.
+
+## Create Deployment
+
+As [helm](https://helm.sh/) is used to deploy the server, you must first create a helm deployment.
+This is a one time step, and is used to group all of your services together. You could run even more services outside of your UltimateHomeServer deployment in a separate deployment.
+
+From within the root of your UHS directory (_usually `/opt/yourdomain`)_ run the following command to create your deployment:
+
+```bash
+./bin/deploy.sh yourdomain
+```
+
+`yourdomain` will be the name of your deployment, and will be used to identify it in the future.
+
+## Deploy Services
+
+With the deployment created, you can now deploy your services to it. Make sure you have both a `services.yaml` and `secrets.yaml` file in your UHS directory.
+
+See [Configure](/docs/configure) for more information on how to create and customize your configuration files.
+
+When you are ready to deploy your services, run the following command:
+
+```bash
+./bin/upgrade.sh yourdomain
+```
+
+## Access Services
+
+You should now be able to access your services _locally_ at their respective subdomains. For example, if you have configured [Homepage](/docs/services/Dashboard/homepage), you should be able to access it at `https://homepage.yourdomain.com`.
+
+You can verify all of the URLS for your services by checking the `nginx` configuration in `files/nginx.conf`.
+
+Congratulations! You have successfully deployed your UltimateHomeServer! 🎉
+
+If you have any issues, please see the [Troubleshooting](/docs/troubleshooting) page, or [open an issue](https://github.com/TechSquidTV/UltimateHomeServer). You can also find us on [Discord](https://discord.com/invite/CTC9DVvYZz)!
+
