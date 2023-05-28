@@ -27,3 +27,21 @@ To view the logs for a specific service, you can use the `kubectl logs` command.
 ```bash
 kubectl logs <pod name>
 ```
+
+## 502 Bad Gateway
+
+If you get a 502 Bad Gateway error when trying to access the application, it is likely that the application is still starting up but otherwise inaccessable.
+Ensure first that the pod for the affected service is running and shows `1/1` under the `READY` column.
+
+```bash
+$ kubectl get pods -A
+
+NAME                                 READY   STATUS    RESTARTS      AGE
+plex-xwz-123                         1/1     Running   0             5m
+```
+
+If you see `0/1` under the `READY` column, refer to the `STATUS` column to determine the cause of the failure.
+
+If there is an issue you will likely see `CrashLoopBackOff` under the `STATUS` column. This indicates that the pod is crashing and restarting repeatedly, which is likely due to a configuration issue. To view the logs for the pod, use the `kubectl logs <pod name>` command.
+
+If the `STATUS` reads `READY` and there is nothing in the container logs to indicate an issue, there is likely nothing wrong with the container itself. More likely, there is a misconfiguration between the container and the `nginx` config. Check to ensure the `port` defined for the service is correct. You may also want to check `files/nginx` to view the `nginx` configs.
