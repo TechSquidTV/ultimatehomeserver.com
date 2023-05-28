@@ -12,13 +12,13 @@ When you have have configured your services and SSL certificates, you can deploy
 As [helm](https://helm.sh/) is used to deploy the server, you must first create a helm deployment.
 This is a one time step, and is used to group all of your services together. You could run even more services outside of your UltimateHomeServer deployment in a separate deployment.
 
-From within the root of your UHS directory (_usually `/opt/yourdomain`)_ run the following command to create your deployment:
+From within the root of your UHS directory (_usually `/opt/<your domain>`)_ run the following command to create your deployment:
 
 ```bash
-./bin/deploy.sh yourdomain
+./bin/deploy.sh <your domain>
 ```
 
-`yourdomain` will be the name of your deployment, and will be used to identify it in the future.
+`<your domain>` will be the name of your deployment, and will be used to identify it in the future.
 
 ## Deploy Services
 
@@ -29,12 +29,12 @@ See [Configure](/docs/configure) for more information on how to create and custo
 When you are ready to deploy your services, run the following command:
 
 ```bash
-./bin/upgrade.sh yourdomain
+./bin/upgrade.sh <your domain>
 ```
 
 ## Access Services
 
-You should now be able to access your services _locally_ at their respective subdomains. For example, if you have configured [Homepage](/docs/services/Dashboard/homepage), you should be able to access it at `https://homepage.yourdomain.com`.
+You should now be able to access your services _locally_ at their respective subdomains. For example, if you have configured [Homepage](/docs/services/Dashboard/homepage), you should be able to access it at `https://homepage.<your domain>.com`.
 
 You can verify all of the URLS for your services by checking the `nginx` configuration in `files/nginx.conf`.
 
