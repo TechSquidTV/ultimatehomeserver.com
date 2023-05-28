@@ -68,6 +68,13 @@ uhs configure nginx plex radarr sonarr -o secrets.yaml
 
 These files will be placed in the same directory as the UltimateHomeServer repository at the root level, next to the `Chart.yaml` file.
 
+#### Recommended/Required Services
+
+**[`nginx`](/docs/services/Network/nginx)** - **Required** for all other services to function properly. It is used as a reverse proxy to route traffic to the appropriate service.
+**[`homepage`](/docs/services/Dashboard/homepage)** - **Recommended** as it provides a landing page for all of your services.
+**[`plex`](/docs/services/Media/plex)** - **Recommended** as the default media server.
+
+
 ## Prep the system
 
 Once you have created your configuration files you will have multiple services similar to:
@@ -86,7 +93,7 @@ Once you have created your configuration files you will have multiple services s
         library: /opt/kavita/library
 ```
 
-Notice here we reference two paths `config` and `library`. These paths need to be created on the host system if they do no already exist and should be writable.
+Notice here we reference two paths `config` and `library`. These paths need to be created on the host system if they do not already exist and should be writable.
 
 ```bash
 mkdir -p /opt/kavita/config /opt/kavita/library
