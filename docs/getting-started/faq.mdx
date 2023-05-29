@@ -1,0 +1,42 @@
+---
+sidebar_position: 5
+next: /docs/troubleshooting
+title: FAQ
+---
+
+# Frequently Asked Questions
+
+## What _is_ UltimateHomeServer?
+
+UltimateHomeServer is a user-friendly package of open-source services that combine to create a powerful home server, capable of replacing many of the services you may already be paying for. It is designed to be easy to set up and maintain, secure, and reliable.
+
+_UHS_ is comprised of a few different components that work together to create a cohesive experience. The main components are:
+
+- [K3s](https://k3s.io/) - K3s is a production ready Kubernetes distribution that is lightweight and simple to use. It is the backbone of the UltimateHomeServer.
+- [Helm Charts](https://github.com/TechSquidTV/UltimateHomeServer) - The main repository contains the [Helm](https://helm.sh/) charts that make up the services available in UHS.
+- [UHS-CLI](https://github.com/TechSquidTV/uhs-cli) - The `uhs` CLI provides an easy way to install and configure services in UHS.
+
+See the [Services](docs/category/services) page for a list of services that are available in UHS.
+
+## Why Kubernetes?
+
+- Stability
+- Reliablity
+- Scalability
+
+Rather than building an entirely new application or collection of scripts to manage self-hostable services, UHS is built on top of Kubernetes because it is a powerful, well-supported, and open-source platform that is already used by many companies to run their production workloads.
+It is also a great way to learn about Kubernetes and how it works, while using UHS can help beginners get started without much Kubernetes knowledge.
+
+Most services that can be self-hosted already offer a [Docker](https://www.docker.com/) image, typically with a [Docker Compose](https://docs.docker.com/compose/) file to make it easy to run the service. You can find many of our favorite services on [LinuxServer.io](https://www.linuxserver.io/), which is where we get many of our Docker images from.
+
+Kubernetes-based deployments, even at home, have several advantages over Docker Compose:
+
+- **Zero-downtime updates** - Kubernetes can update services without any downtime, by creating a new container and then switching traffic to it once it is ready.
+- **Automatic restarts** - Kubernetes can automatically restart containers that fail, or even entire nodes if they go down.
+- **Automatic load balancing** - Kubernetes can automatically distribute traffic to containers, and even scale up the number of containers if needed.
+- **Cluster management** - Kubernetes can manage multiple nodes, and even multiple clusters, making it easy to scale up your home server as needed, or even bring it into a cloud provider if you want to.
+- **Experience** - Kubernetes is a widely used platform, and learning it can be a great way to get experience with a technology that is used by many companies.
+
+## Why is X service not included?
+
+Only because we haven't gotten to it yet! We are always looking for new services to add to UHS, and we welcome contributions from the community. If you have a service you would like to see added, please open an issue on the [GitHub repository](https://github.com/TechSquidTV/UltimateHomeServer)
