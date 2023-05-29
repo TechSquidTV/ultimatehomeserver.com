@@ -1,1 +1,34 @@
+---
+title: Nginx
+tags:
+  - service
+---
+
 # Nginx
+
+Nginx is used as the reverse proxy for the `UHS`. This servive is _required_ for `UHS` to function.
+
+## Configuration
+
+See the [Nginx Configuration](/docs/nginx/configuration) page for more information on how to configure Nginx.
+
+## More Information
+
+In `UHS`, the Nginx configuration file is stored in `files/nginx.conf` and contains [helm templating](https://helm.sh/docs/chart_template_guide/#the-chart-template-developer-s-guide). Each service has an entry in the Nginx config that that will be conditionally loaded based on the values passed in the `secrets.yaml` file.
+
+An example of an Nginx config entry for the `UHS` service is below:
+
+```nginx
+{{- if .Values.services.homepage.enabled }}
+  server {
+    server_name homepage.{{ .Values.services.nginx.domain }};
+    include ssl.conf;
+    location / {
+      proxy_pass http://homepage:{{ .Values.services.homepage.ports.http }};
+      include nginx_proxy_headers.conf;
+    }
+  }
+{{- end }}
+```
+
+The line `server_name` also dictates the subdomain that will be used for the service. You can change it here if you wish.
