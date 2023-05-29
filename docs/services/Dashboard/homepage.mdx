@@ -6,6 +6,88 @@ tags:
 
 # Homepage
 
+- [Website](https://gethomepage.dev/)
+- [Documentation](https://gethomepage.dev/en/installation/)
+
+A highly customizable homepage (or startpage / application dashboard) with Docker and service API integrations.
+
 ## Configuration
+
+Homepage is the default dashboard on UHS and is highly recommended. After generating the default `homepage` configuration for UHS, you should have the following:
+  
+  ```yaml
+     homepage:
+        enabled: false
+        replicaCount: 1
+        image:
+            repository: ghcr.io/benphelps/homepage
+            tag: latest
+            pullPolicy: Always
+        ports:
+            http: 3000
+        bookmarks:
+            - Development:
+                - github:
+                    - icon: mdi-github
+                      abbr: gh
+                      href: https://github.com
+            - Media:
+                - youtube:
+                    - icon: mdi-youtube
+                      abbr: yt
+                      href: https://youtube.com
+                - plex:
+                    - icon: mdi-plex
+                      abbr: plex
+                      href: https://app.plex.tv/desktop
+        services:
+            - Media:
+                - plex:
+                    - icon: mdi-plex
+                      href: https://app.plex.tv/desktop
+                      description: Plex
+        widgets:
+            - search:
+                focus: true
+                provider: '[duckduckgo, google]'
+                target: _blank
+        settings:
+            theme: dark
+            title: Homepage
+  ```
+
+Homepage's configuration is servied as multiple configuration files which are mapped via the `secrets.yaml` file and the Helm chart. Because of the mapping, it is only necessary to have this one file, but this is important information to know when reading the documentation on Homepage's website.
+
+### Services
+
+[https://gethomepage.dev/en/configs/services/](https://gethomepage.dev/en/configs/services/)
+
+Servies are components on the Homepage dashboard that can be configured to display information from a service API. For example, the Plex service will display the current status of your Plex server.
+
+Here is an example of using the [Tautulli Service Widget](https://gethomepage.dev/en/services/plex-tautulli/) to display the current status of your Plex server:
+
+```yaml
+  - Media: # Group
+      - Plex: # Service
+          href: https://plex.rackserver.dev
+          icon: mdi-plex
+          description: Plex Media Server
+          widget: # Widget
+              type: tautulli
+              url: http://tautulli:8181
+              key: xyz
+```
+
+### Bookmarks
+
+[https://gethomepage.dev/en/configs/bookmarks/](https://gethomepage.dev/en/configs/bookmarks/)
+
+Bookmarks are a simple collection of links that can be grouped together.
+
+### Widgets
+
+[https://gethomepage.dev/en/configs/widgets/](https://gethomepage.dev/en/configs/widgets/)
+
+Information widgets are placed above the first horizontal fold line, and can be configured more than once. As an example, we’ll place two resource widgets, one that reports all stats, and one that report only disk usage for a separate location.
 
 ## More Information
