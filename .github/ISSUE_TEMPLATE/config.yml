@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a bug with the CLI
+    url: https://github.com/TechSquidTV/uhs-cli/issues/new/choose
+    about: Having a problem with the CLI? Report it here.
+  - name: Report a bug with a service
+    url: https://github.com/TechSquidTV/UltimateHomeServer/issues/new/choose
+    about: Having a problem with a service? Report it here.
+  - name: Request a new service
+    url: https://github.com/TechSquidTV/uhs-cli/issues/new/choose
+    about: Request new services to be added to the CLI and UHS.

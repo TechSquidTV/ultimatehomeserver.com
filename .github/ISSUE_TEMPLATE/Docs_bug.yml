@@ -1,0 +1,18 @@
+# Original: https://github.com/nestjs/nest/blob/master/.github/ISSUE_TEMPLATE/Bug_report.yml
+name: "\U0001F41B Bug Report"
+description: "Discover an issue in the docs? \U0001F914"
+labels: ['bug', 'needs triage']
+body:
+  - type: checkboxes
+    attributes:
+      label: 'Is there an existing issue for this?'
+      description: 'Please search [here](../issues?q=is%3Aissue) to see if an issue already exists for the bug you encountered'
+      options:
+        - label: 'I have searched the existing issues'
+          required: true
+
+  - type: textarea
+    attributes:
+      label: 'Info'
+      description: |
+        Describe the issue and how you'd like to see it resolved.
