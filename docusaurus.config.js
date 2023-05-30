@@ -83,10 +83,27 @@ const config = {
             docId: "getting-started/faq",
             label: "FAQ",
           },
-          // { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/TechSquidTV/ultimatehomeserver.com",
-            label: "GitHub",
+            label: "Source Code",
+            position: "right",
+            items: [
+              {
+                label: "This Website",
+                href: "https://github.com/TechSquidTV/ultimatehomeserver.com",
+              },
+              {
+                label: "UltimateHomeServer",
+                href: "https://github.com/TechSquidTV/UltimateHomeServer",
+              },
+              {
+                label: "UHS CLI",
+                href: "https://github.com/TechSquidTV/uhs-cli",
+              },
+            ],
+          },
+          {
+            href: "https://discord.com/invite/CTC9DVvYZz",
+            label: "Discord",
             position: "right",
           },
         ],
