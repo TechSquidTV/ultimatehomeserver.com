@@ -81,7 +81,7 @@ You should configure your router to assign a static IP address to your server if
 
 1. Once you have your server's IP address, you can configure a domain name. You can obtain a domain name from a registrar of your choice.
 2. In the DNS settings for your domain, create an `A` record that points to your server's IP address.
-3. Create a second `A` record that points to your server's IP address, but with a subdomain of `*.`, this will be used for wildcard subdomains.
+3. Create a `CNAME` record of `*` that points to your domain, this will be used as a wildcard alias for your subdomains.
 
 ![DNS Settings](./img/dns_records.png)
 
