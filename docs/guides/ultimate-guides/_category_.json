@@ -1,0 +1,8 @@
+{
+  "label": "Ultimate Guides",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "A knowledge base of all thing ultimate for self-hosting"
+  }
+}
