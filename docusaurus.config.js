@@ -84,6 +84,12 @@ const config = {
             label: "FAQ",
           },
           {
+            type: "doc",
+            position: "left",
+            docId: "/category/guides",
+            label: "Guides",
+          },
+          {
             label: "Source Code",
             position: "right",
             items: [
