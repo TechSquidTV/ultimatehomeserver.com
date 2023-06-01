@@ -45,3 +45,24 @@ If you see `0/1` under the `READY` column, refer to the `STATUS` column to deter
 If there is an issue you will likely see `CrashLoopBackOff` under the `STATUS` column. This indicates that the pod is crashing and restarting repeatedly, which is likely due to a configuration issue. To view the logs for the pod, use the `kubectl logs <pod name>` command.
 
 If the `STATUS` reads `READY` and there is nothing in the container logs to indicate an issue, there is likely nothing wrong with the container itself. More likely, there is a misconfiguration between the container and the `nginx` config. Check to ensure the `port` defined for the service is correct. You may also want to check `files/nginx` to view the `nginx` configs.
+
+### ContainerCreating stuck
+
+If you see `ContainerCreating` under the `STATUS` column, this indicates that the pod is still being created. This is normal during the initial deployment, but if you see this for an extended period of time, there may be an issue. After a few minutes, if the pod is still in the `ContainerCreating` state, you can describe the pod to get more information.
+
+```bash
+kubectl describe pod <pod name>
+```
+
+This will often be the result of mounting a volume that does not exist. If you see an error similar to the following, ensure that the volume exists and is spelled correctly.
+
+```bash
+Warning  FailedMount  2m (x4 over 3m)  kubelet, <node name>  MountVolume.SetUp failed for volume "config" : hostPath type check failed: /opt/<service>/config is not a directory
+```
+
+Create the missing directory and re-run the deployment.
+
+```bash
+mkdir -p /opt/<service>/config
+chmod 660 /opt/<service>/config
+```
