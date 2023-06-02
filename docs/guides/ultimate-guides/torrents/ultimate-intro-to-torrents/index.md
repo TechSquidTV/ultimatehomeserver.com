@@ -121,9 +121,32 @@ If a tracker were to go down before you got the chance to connect to the swarm, 
 
 ### DHT (Distributed Hash Table)
 
-A [DHT](https://en.wikipedia.org/wiki/Distributed_hash_table) is a decentralized system for storing and retrieving simple key-value data, where any member of the network retrieve data from any other member of the network. In BitTorrent, the [Mainline DHT](https://en.wikipedia.org/wiki/Mainline_DHT) protocol is used to store information about torrents and their peers locally. The DHT works as an alternative to a tracker and can aid in connecting to a swarm if the tracker is offline.
+A [DHT](https://en.wikipedia.org/wiki/Distributed_hash_table) is a decentralized system for storing and retrieving simple key-value data, where any member of the network can retrieve data from any other member of the network. In BitTorrent, the [Mainline DHT](https://en.wikipedia.org/wiki/Mainline_DHT) protocol is used to store information about torrents and their peers locally. The DHT works as an alternative to a tracker and can aid in connecting to a swarm if the tracker is offline.
 
 To find peers for a particular swarm over DHT, a `get_peers` query is made with the SHA-1 hash of the torrent (the "infohash") as the key to the "nearest" node in the DHT. The node will then respond with a list of peers in the swarm. If the node does not have any peers, it will respond with a list of other nodes in the DHT that are closer to the infohash. The client will then query those nodes for peers and continue until it has found peers to connect with. An algorithmic virtual game of telephone. It is important to note that "nearest" in the context of the DHT is not related to physical geographical distance, but instead a mathematical distance that creates efficient and balanced routing.
 
 ![DHT Request](./img/dht-diagram-dark-mode.svg#gh-dark-mode-only)![DHT Request](./img/dht-diagram-light-mode.svg#gh-light-mode-only)
 
+### Leechers and Seeders
+
+BitTorrent is built around the idea of users sharing files with each other, the system only works if users are willing to share the files they have downloaded with other users.
+
+A "leecher" is a name typically given to users who download files and immediately stop sharing them. A "leech" is someone who takes from the BitTorrent network without giving back.
+
+If you are still actively downloading a file and simultaneously uploading to other peers, you are commonly referred to as a "peer". A peer generically refers to any user in a swarm, but is often used to refer to users who are still downloading the file.
+
+Finally, a "seeder" is a user who has completed downloading a file and continues to share the file with other users. Because of the decentralized nature of BitTorrent and the concept of "pieces", it is extremely beneficial to have seeders in the swam who have full copies of the file. Without enough seeders in a swarm, it is common for all active members in a swarm to exchange pieces with each other, but if no user has the complete file, it is possible that no user will ever complete the download.
+
+### Private Trackers
+
+A private tracker refers to a Tracker, usually backed by a website or community, that requires registration to login and access. When downloading torrents from a private torrent tracker website, the tracker URL is usually unique to your account and is used to track your ratio of upload to download. While limiting the amount of users who can join may appear counter-intuitive to the decentralized nature of BitTorrent, private trackers often mitigate a small portion of privacy concerns by ensuring non-community members are not able to spy on the activity in the swarm.
+
+It may go without saying that private trackers are usually closed to registration, requiring an invite from an existing member to join, or some trackers will open registration for a short period of time to allow new members to join.
+
+In private tracker environments, it may be that your tracker requires you to maintain a certain ratio of upload to download. It is usually the case that you must at least upload as much as you download, or otherwise face some penalty, such as being banned from the tracker.
+
+## Torrenting Safely
+
+Torrenting is a great way to download files, but it is important to be aware of the risks involved. While torrenting itself is not illegal, it is often used to download pirated content, which is illegal in many countries. Additionally, because of the decentralized nature of BitTorrent, it is possible for malicious users to join a swarm and spy on the activity of other users. This is especially concerning when downloading pirated content, as it is possible for a malicious user to join the swarm and record the IP addresses of other users in the swarm. This is why it is important to use a VPN when torrenting or some other method of obscuring your IP address.
+
+We will update this guide in the future with links to a VPN specific guide.
