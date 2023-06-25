@@ -3,6 +3,6 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Torrents are a popular way to share content online via peer-to-peer networks. Torrents allow a group of people who already have or currently want a file, to exchange pieces of it freely between each other, without the need for a central server. This makes torrents a very efficient way to share large files, such as movies, music, software, etc."
+    "description": "Torrents allow a group of people who already have or currently want a file, to exchange pieces of it freely between each other, without the need for a central server via peer-to-peer networks. This makes torrents a very efficient way to share large files, such as movies, music, software, etc."
   }
 }
