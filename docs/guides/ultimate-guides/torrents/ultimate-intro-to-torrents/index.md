@@ -159,7 +159,7 @@ To find peers for a particular swarm over DHT, a `get_peers` query is made with 
 
 ### Leechers and Seeders
 
-BitTorrent is built around the idea of users sharing files with each other, the system only works if users are willing to share the files they have downloaded with other users.
+BitTorrent is built around the idea of users sharing files with each other. The system only works if users are willing to share the files they have downloaded with other users.
 
 A "leecher" is a name typically given to users who download files and immediately stop sharing them. A "leech" is someone who takes from the BitTorrent network without giving back.
 
