@@ -43,7 +43,7 @@ You can use a tool such as [TorrentEditor](https://torrenteditor.com/) to view t
 
 ##### Hash Details
 
-Info Hash: D6B4535B A8F2B340 12BC6335 69F113E7 7017E032
+**Info Hash:** D6B4535B A8F2B340 12BC6335 69F113E7 7017E032
 
 ##### Tracker Information
 
@@ -97,6 +97,35 @@ Similarly, a magnet link looks like this:
 ```
 
 This link, when clicked, will launch your system default torrent client and begin downloading the file.
+
+If you take a closer look at the magnet link, you'll notice it contains all the same information as the torrent file, but in a URL format.
+
+#### Magnet Link Parameters
+
+##### xt (Exact Topic)
+
+The `xt` parameter is used to identify and verify the file(s) via a [URN](https://en.wikipedia.org/wiki/Uniform_Resource_Name). In all _torrent_ related magnet links, this will be a `urn:btih:` followed by the [SHA-1](https://en.wikipedia.org/wiki/SHA-1) info hash of the torrent. `btih` here stands for "BitTorrent Info Hash", and would differ from different older P2P protocols. This is all you need to download a torrent, but the other parameters are useful for providing additional information about the torrent.
+
+##### dn (Display Name)
+
+The `dn` parameter is used to provide a display name for the torrent. This is the name that will be displayed in your torrent client. If this parameter is not provided, the name of the file will be used instead.
+
+##### xl (eXact Length)
+
+The `xl` parameter is used to provide the size of the file in bytes. This is useful for your torrent client to know how much data to expect to download.
+
+##### tr (Trackers)
+
+The `tr` parameter is used to provide a list of trackers to connect to.
+
+##### More Info
+
+These are the main parameters you will likely see in most magnet links, though more do exist.
+For more information on the magnet link parameters, see the [Magnet URI scheme](https://en.wikipedia.org/wiki/Magnet_URI_scheme#Parameters) Wikipedia page.
+
+### Pieces
+
+
 
 ### Torrent Clients
 
