@@ -79,7 +79,7 @@ The data inside a torrent file is so small, that it can, in fact be can be repre
 A ['Magnet link'](https://en.wikipedia.org/wiki/Magnet_URI_scheme) is a URL scheme that allows you to share information about a torrent as a link, rather than a file.
 This means websites that want to share torrents, no longer had to worry about serving files, making it extremely robust to simply share a _static_ webpage with links to all the files you want to share.
 Static webpages are extremely easy to host, robust against traffic spikes and take-down attempts, and can often even be hosted for free on a number of services online.
-This helped make torrent indexers like ThePirateBay _decentralized_. In 2012, in an effort to ensure the longevity of the content on ThePirateBay and thanks to their recent conversion to magnet links, the site was replicated by users and [reduced to a 90 MB torrent file](https://torrentfreak.com/the-pirate-bay-returns-121213/) that anyone could copy and re-host.
+This helped make torrent indexers like ThePirateBay _decentralized_. In 2012, in an effort to ensure the longevity of the content on ThePirateBay and thanks to their recent conversion to magnet links, their website was replicated by users and [reduced to a 90 MB torrent file](https://torrentfreak.com/the-pirate-bay-returns-121213/) that anyone could copy and re-host.
 
 A magnet link works similar to how if you have ever clicked on an email address in the browser before and had it open up your default email client.
 
