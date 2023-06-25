@@ -7,8 +7,9 @@ authors: TechSquidTV
 
 # What is a Torrent?
 
-More than likely, you are at least somewhat familiar with torrents. They are a way to download files from the internet.
-But how do they work? What are the benefits of using torrents? How do you use them? Are they safe? Consider the following your guide to _torrents_.
+You've likely heard of torrents before, perhaps even used them in the past. Torrents provide a method of sharing files, usually larger ones, directly with other "peers" over the internet. They eliminate the need for a costly central server. 
+But how do they function? What advantages do torrents offer? How can one utilize them? Are they secure? Consider the following as your comprehensive guide to _torrents_.
+
 
 ## The Background of BitTorrent
 
