@@ -173,7 +173,7 @@ A private tracker refers to a Tracker, usually backed by a website or community,
 
 It may go without saying that private trackers are usually closed to registration, requiring an invite from an existing member to join, or some trackers will open registration for a short period of time to allow new members to join.
 
-In private tracker environments, it may be that your tracker requires you to maintain a certain ratio of upload to download. It is usually the case that you must at least upload as much as you download, or otherwise face some penalty, such as being banned from the tracker.
+In private tracker environments, it may be that your tracker requires you to maintain a certain ratio of upload to download. Typically, you are required to at least upload as much as you download. Otherwise, you will face a penalty, such as being banned from the tracker.
 
 ## Torrenting Safely
 
